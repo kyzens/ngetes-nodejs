@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    
+    <title>Ngetes NodeJS</title>
+</head>
+<body>
+    <div class="container">
+        <h3><%= title %></h1>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nama</th>
+                    <th>Kelas</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% for (let user of users) { %>
+                <tr>
+                    <td><%= user.id %></td>
+                    <td><%= user.nama %></td>
+                    <td><%= user.kelas %></td>
+                </tr>
+                <% } %>
+            </tbody>
+        </table>
+
+        <form action="/tambah" method="post">
+            <h3>Form Tambah Data</h3>
+            <div class="row g-2">
+                <div class="col-12">
+                    <label for="nama" class="form-label">Nama</label>
+                    <input type="text" name="nama" class="form-control form-control-sm">
+                </div>
+                <div class="col-12">
+                    <label for="kelas" class="form-label">Kelas</label>
+                    <input type="text" name="kelas" class="form-control form-control-sm">
+                </div>
+                <div class="col-12">
+                    <button type="submit" name="simpan" class="btn btn-sm btn-primary mt-1">Tambahkan</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+</body>
+</html>
