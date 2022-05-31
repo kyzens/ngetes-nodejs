@@ -37,6 +37,14 @@ db.connect((err) => {
             res.redirect("/")
         })
     })
+
+    app.post("/update", (req, res) => {
+        const updateSql = `UPDATE tb_user SET nama='${req.body.nama}', kelas='${req.body.kelas}' WHERE id='${req.body.id}';`
+        db.query(updateSql, (err, result) => {
+            if (err) throw err
+            res.redirect("/")
+        })
+    })
 })
 
 app.listen(3000, () => {
